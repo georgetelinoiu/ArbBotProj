@@ -6,7 +6,7 @@ import time
 url = "https://superbet.ro/pariuri-sportive/tenis/atp/atp-winston-salem-sua/toate"
 
 
-DRIVER_PATH = 'chromedriver_win32 (1)\chromedriver.exe'
+DRIVER_PATH = 'chromedriver.exe'
 driver = webdriver.Chrome(executable_path=DRIVER_PATH)
 driver.get(url)
 time.sleep(5)
