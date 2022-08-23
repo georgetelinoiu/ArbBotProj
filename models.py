@@ -1,10 +1,10 @@
-class Meci:
-    def __init__(self, jucator1, jucator2, cota1, cota2):
-        self.jucator1 = jucator1
-        self.jucator2 = jucator2
-        self.cota1 = cota1
-        self.cota2 = cota2
-        self.probabilitate = (1 / float(cota1) + 1 / float(cota2)) * 100
+class Match:
+    def __init__(self, player1, player2, odd1, odd2):
+        self.player1 = player1
+        self.player2 = player2
+        self.odd1 = odd1
+        self.odd2 = odd2
+        self.probabilitate = (1 / float(odd1) + 1 / float(odd2)) * 100
 
     def __str__(self):
-        return "Joaca " + self.jucator1 + " cota " + self.cota1 + " vs " + self.jucator2 + " cota " + self.cota2 + " probabilitate totala: " + str(self.probabilitate)
+        return "Match " + self.player1 + " with odd " + self.odd1 + " vs " + self.player2 + " odd " + self.odd2 + " total probability: " + str(self.probabilitate)

@@ -2,9 +2,9 @@ import requests as rq
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
-from models import Meci
+from models import Match
 
-url = "https://superbet.ro/pariuri-sportive/tenis/atp/atp-winston-salem-sua/toate"
+url = "https://superbet.ro/pariuri-sportive/tenis/challenger/toate"
 
 DRIVER_PATH = 'chromedriver.exe'
 driver = webdriver.Chrome(executable_path=DRIVER_PATH)
@@ -30,10 +30,14 @@ for i in range (0,len(listaCote),2 ):
     
 listaMeciuri = []
 for t1,t2,c in zip(team1, team2, listaCoteMeci):
-    meci = Meci(t1.text,t2.text,c[0],c[1])
+    meci = Match(t1.text,t2.text,c[0],c[1])
     listaMeciuri.append(meci)
 
 for m in listaMeciuri:
     print(m)
 
 time.sleep(5)
+
+for m in listaMeciuri:
+    if (m.probabilitate < 100):
+        print("Arbitrage found!")
