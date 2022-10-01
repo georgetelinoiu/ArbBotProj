@@ -8,3 +8,7 @@ class Match:
 
     def __str__(self):
         return "Match " + self.player1 + " with odd " + self.odd1 + " vs " + self.player2 + " odd " + self.odd2 + " total probability: " + str(self.probabilitate)
+
+    def compare(self, match):
+        if(self.player1 == match.player1 and self.player2 == match.player2):
+            return True
